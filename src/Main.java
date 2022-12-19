@@ -35,9 +35,7 @@ public class Main {
                 System.out.print(--b + " ");
             }
             System.out.println();
-            {
 
-            }
 
         }
 
@@ -47,13 +45,12 @@ public class Main {
     public static void task3() {
         System.out.println("Задача 3");
         int population = 12_000_000;
-        int fertility = population / 1_000 * 17;
-        int mortality = population / 1_000 * 8;
-        int year = 0;
-        while (year < 10) {
-            year++;
-            population = population + fertility - mortality;
-            System.out.println("Год " + year + ", численность населения составляет: " + population);
+        int birthRate = 17 * population / 1000;
+        int deathRate = 8 * population / 1000;
+        for (int i = 1; i <= 10; i++) {
+            population += birthRate;
+            population += deathRate;
+            System.out.printf("Год %d, численность %d \n", i, population);
         }
 
 
@@ -79,7 +76,7 @@ public class Main {
             if (monthNum % 6 == 0) {
                 System.out.printf(" месяц %d, сумма %d \n", monthNum, sum);
             }
-        monthNum++;
+            monthNum++;
         }
 
 
